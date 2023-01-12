@@ -10,7 +10,6 @@ public class Car {
    final String bodyType;
    private String registrationNumber;
    final int numberOfSeats;
-   private int monthOfAdmission;
    private boolean signTires;
 
 
@@ -109,7 +108,7 @@ public class Car {
    }
 
    public Car(String brand, String model, double engineVolume, String color, int year, String country,
-              String transmission, String bodyType, String registrationNumber, int numberOfSeats, int monthOfAdmission) {
+              String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
       this.brand = brand;
       this.model = model;
       this.engineVolume = engineVolume;
@@ -120,7 +119,6 @@ public class Car {
       this.bodyType = bodyType;
       this.registrationNumber = registrationNumber;
       this.numberOfSeats = numberOfSeats;
-      this.monthOfAdmission = monthOfAdmission;
 
       if (this.engineVolume <= 0) {
          this.engineVolume = 1.5;
@@ -134,11 +132,7 @@ public class Car {
       if (this.registrationNumber == "" || this.registrationNumber == null) {
          this.registrationNumber = "A000AA000";
       }
-      if (this.monthOfAdmission >= 3 && this.monthOfAdmission <= 10) {
-         this.signTires = false;
-      } else {
-         this.signTires = true;
-      }
+
    }
 
 
