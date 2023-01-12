@@ -83,9 +83,6 @@ public class Car {
    }
 
 
-
-  // Если год производства ≤0, то значение по умолчанию — 2000.
-
    @Override
    public String toString() {
       return "Car{" +
