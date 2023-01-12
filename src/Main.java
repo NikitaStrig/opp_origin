@@ -9,7 +9,7 @@ public class Main {
         mass[2] = new transport.Car("Audi", "A8 50 L TDI quattr", 1.7, "Black", 2020, "Germany", "Meh", "Sedan", "C557PV777", 5);
         mass[3] = new transport.Car("Kia", "Sportage 4-го поколения", 2.4, "Red", 2018, "South Korea", "Meh", "Sedan", "C777PV777", 5);
         mass[4] = new transport.Car("Hyundai", "Avante", 1.6, "Orange", 2016, "South Korea", "Meh", "Sedan", "C346PV777", 5);
-        mass[5] = new transport.Car("Lada", "Vesta", 0, null, 0, null, "", "Sedan", null, 0);
+        mass[5] = new transport.Car("Lada", "Vesta", 0, null, 0, null, "", "Sedan", null, 3);
         for (int i = 0; i < mass.length; i++) {
             System.out.println(mass[i]);
         }
