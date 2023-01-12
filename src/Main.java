@@ -3,7 +3,7 @@ import transport.Car;
 public class Main {
     public static void main(String[] args) {
         transport.Car[] mass = new transport.Car[6];
-        int m = 8;
+        int m = 2;
         mass[0] = new transport.Car("Lada", "Granta", 1.7, "Yalow", 2015, "Russia", "Meh", "Sedan", "C447PV777", 5);
         mass[1] = new transport.Car("BMW", "Z8", 3.0, "Black", 2021, "Germany", "Meh", "Sedan", "C227PV777", 5);
         mass[2] = new transport.Car("Audi", "A8 50 L TDI quattr", 1.7, "Black", 2020, "Germany", "Meh", "Sedan", "C557PV777", 5);
@@ -24,8 +24,10 @@ public class Main {
            for (i = 0; i < mass.length; i++) {
                if (m >= 3 && m <=11){
                    mass[i].setSignTires(false);
-               }
-               else {mass[i].setSignTires(true);}
+                   resoult = resoult + mass[i] + "\n";
+               } else {mass[i].setSignTires(true);
+                   resoult = resoult + mass[i] + "\n";}
+
            }
            return resoult;
 }
