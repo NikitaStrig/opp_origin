@@ -1,48 +1,46 @@
 package transport;
 public class Car {
    final String brand;
-   final String  model;
+   final String model;
    private double engineVolume;
-   private String  color;
-   final   int year;
+   private String color;
+   final int year;
    final String country;
    private String transmission;
    final String bodyType;
    private String registrationNumber;
    final int numberOfSeats;
-   private int mSignTires;
+   private int monthOfAdmission;
    private boolean signTires;
 
 
    public class Key {
-        private boolean remoteEngineStart;
-        private boolean keylessAccess;
+      private boolean remoteEngineStart;
+      private boolean keylessAccess;
 
-        public boolean isRemoteEngineStart() {
-           return remoteEngineStart;
-        }
+      public boolean isRemoteEngineStart() {
+         return remoteEngineStart;
+      }
 
-        public Key(boolean remoteEngineStart, boolean keylessAccess) {
-           this.remoteEngineStart = remoteEngineStart;
-           this.keylessAccess = keylessAccess;
-        }
-
-
-        public void setRemoteEngineStart(boolean remoteEngineStart) {
-           this.remoteEngineStart = remoteEngineStart;
-        }
-
-        public boolean isKeylessAccess() {
-           return keylessAccess;
-        }
-
-        public void setKeylessAccess(boolean keylessAccess) {
-           this.remoteEngineStart = keylessAccess;
-        }
-
-         }
+      public Key(boolean remoteEngineStart, boolean keylessAccess) {
+         this.remoteEngineStart = remoteEngineStart;
+         this.keylessAccess = keylessAccess;
+      }
 
 
+      public void setRemoteEngineStart(boolean remoteEngineStart) {
+         this.remoteEngineStart = remoteEngineStart;
+      }
+
+      public boolean isKeylessAccess() {
+         return keylessAccess;
+      }
+
+      public void setKeylessAccess(boolean keylessAccess) {
+         this.remoteEngineStart = keylessAccess;
+      }
+
+   }
 
 
    public String getBrand() {
@@ -77,6 +75,7 @@ public class Car {
    public String getCountry() {
       return country;
    }
+
    public String getTransmission() {
       return transmission;
    }
@@ -105,8 +104,12 @@ public class Car {
       return signTires;
    }
 
+   public void setSignTires(boolean signTires) {
+      this.signTires = signTires;
+   }
+
    public Car(String brand, String model, double engineVolume, String color, int year, String country,
-              String transmission, String bodyType, String registrationNumber, int numberOfSeats, int mSignTires) {
+              String transmission, String bodyType, String registrationNumber, int numberOfSeats, int monthOfAdmission) {
       this.brand = brand;
       this.model = model;
       this.engineVolume = engineVolume;
@@ -116,8 +119,8 @@ public class Car {
       this.transmission = transmission;
       this.bodyType = bodyType;
       this.registrationNumber = registrationNumber;
-      this.numberOfSeats = numberOfSeats ;
-      this.mSignTires = mSignTires;
+      this.numberOfSeats = numberOfSeats;
+      this.monthOfAdmission = monthOfAdmission;
 
       if (this.engineVolume <= 0) {
          this.engineVolume = 1.5;
@@ -125,17 +128,19 @@ public class Car {
       if (this.color == "" || this.color == null) {
          this.color = "White";
       }
-      if (this.transmission == "" || this.transmission == null){
+      if (this.transmission == "" || this.transmission == null) {
          this.transmission = "Auto";
       }
-      if (this.registrationNumber == "" || this.registrationNumber == null){
+      if (this.registrationNumber == "" || this.registrationNumber == null) {
          this.registrationNumber = "A000AA000";
       }
-      if (this.mSignTires >= 3 && this.mSignTires <= 10){
+      if (this.monthOfAdmission >= 3 && this.monthOfAdmission <= 10) {
          this.signTires = false;
+      } else {
+         this.signTires = true;
       }
-      else {this.signTires = true;}
    }
+
 
    @Override
    public String toString() {
