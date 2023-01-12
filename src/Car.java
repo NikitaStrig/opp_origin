@@ -77,7 +77,7 @@ public class Car {
          this.color = "White";
       }
       if (this.year <= 0) {
-         this.year = 200;
+         this.year = 2000;
       }
 
    }
@@ -91,7 +91,7 @@ public class Car {
       return "Car{" +
               "brand='" + brand + '\'' +
               ", model='" + model + '\'' +
-              ", engineVolume=" + engineVolume +
+              ", engineVolume=" + engineVolume + " л" +
               ", color='" + color + '\'' +
               ", year=" + year +
               ", country='" + country + '\'' +
