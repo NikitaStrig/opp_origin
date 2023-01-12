@@ -10,7 +10,8 @@ public class Car {
    final String bodyType;
    private String registrationNumber;
    final int numberOfSeats;
-   private boolean signTires;
+   private boolean winterTires;
+   private boolean summerTires;
 
 
    public class Key {
@@ -75,6 +76,14 @@ public class Car {
       return country;
    }
 
+   public void setWinterTires(boolean winterTires) {
+      this.winterTires = winterTires;
+   }
+
+   public void setSummerTires(boolean summerTires) {
+      this.summerTires = summerTires;
+   }
+
    public String getTransmission() {
       return transmission;
    }
@@ -99,13 +108,7 @@ public class Car {
       return numberOfSeats;
    }
 
-   public boolean getSignTires() {
-      return signTires;
-   }
 
-   public void setSignTires(boolean signTires) {
-      this.signTires = signTires;
-   }
 
    public Car(String brand, String model, double engineVolume, String color, int year, String country,
               String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
@@ -149,7 +152,9 @@ public class Car {
               ", bodyType='" + bodyType + '\'' +
               ", registrationNumber='" + registrationNumber + '\'' +
               ", numberOfSeats=" + numberOfSeats +
-              ", signTires=" + signTires +
+              ", winterTires=" + winterTires +
+              ", summerTires=" + summerTires +
               '}';
    }
 }
+
