@@ -12,6 +12,33 @@ public class Car {
    final int numberOfSeats;
    private int mSignTires;
    private boolean signTires;
+     public class Key {
+        private boolean remoteEngineStart;
+        private boolean keylessAccess;
+
+        public boolean isRemoteEngineStart() {
+           return remoteEngineStart;
+        }
+
+        public Key(boolean remoteEngineStart, boolean keylessAccess) {
+           this.remoteEngineStart = remoteEngineStart;
+           this.keylessAccess = keylessAccess;
+        }
+
+
+        public void setRemoteEngineStart(boolean remoteEngineStart) {
+           this.remoteEngineStart = remoteEngineStart;
+        }
+
+        public boolean isKeylessAccess() {
+           return keylessAccess;
+        }
+
+        public void setKeylessAccess(boolean keylessAccess) {
+           this.keylessAccess = keylessAccess;
+        }
+
+     }
 
 
    public String getBrand() {
@@ -98,7 +125,7 @@ public class Car {
          this.transmission = "Auto";
       }
       if (this.registrationNumber == "" || this.registrationNumber == null){
-         this.transmission = "A000AA000";
+         this.registrationNumber = "A000AA000";
       }
       if (this.mSignTires >= 3 && this.mSignTires <= 10){
          this.signTires = false;
@@ -119,7 +146,10 @@ public class Car {
               ", bodyType='" + bodyType + '\'' +
               ", registrationNumber='" + registrationNumber + '\'' +
               ", numberOfSeats=" + numberOfSeats +
+              ", mSignTires=" + mSignTires +
               ", signTires=" + signTires +
+              ", keylessAccess='" + + '\'' +
               '}';
+
    }
 }
