@@ -12,6 +12,7 @@ public class Car {
    private final int numberOfSeats;
    private boolean winterTires;
    private boolean summerTires;
+   Key key;
 
 
    public class Key {
@@ -130,6 +131,13 @@ public class Car {
       this.bodyType = bodyType;
       this.registrationNumber = registrationNumber;
       this.numberOfSeats = numberOfSeats;
+      key = new Key(false,false);
+      if (this.year >= 2018) {
+         key.keylessAccess = true;
+         key.remoteEngineStart = true;
+      }
+
+
 
       if (this.engineVolume <= 0) {
          this.engineVolume = 1.5;
@@ -145,6 +153,7 @@ public class Car {
       }
 
    }
+
    @Override
    public String toString() {
       return "Car{" +
@@ -160,8 +169,10 @@ public class Car {
               ", numberOfSeats=" + numberOfSeats +
               ", winterTires=" + winterTires +
               ", summerTires=" + summerTires +
+              ", key=" + key +
               '}';
    }
-
 }
+
+
 
