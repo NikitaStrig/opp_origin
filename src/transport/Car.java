@@ -1,15 +1,15 @@
 package transport;
 public class Car {
-   final String brand;
-   final String model;
+   private final String brand;
+   private final String model;
    private double engineVolume;
    private String color;
-   final int year;
-   final String country;
+   private final int year;
+   private final String country;
    private String transmission;
-   final String bodyType;
+   private final String bodyType;
    private String registrationNumber;
-   final int numberOfSeats;
+   private final int numberOfSeats;
    private boolean winterTires;
    private boolean summerTires;
 
@@ -18,15 +18,16 @@ public class Car {
       private boolean remoteEngineStart;
       private boolean keylessAccess;
 
-      public boolean isRemoteEngineStart() {
-         return remoteEngineStart;
-      }
+
 
       public Key(boolean remoteEngineStart, boolean keylessAccess) {
          this.remoteEngineStart = remoteEngineStart;
          this.keylessAccess = keylessAccess;
       }
 
+      public boolean isRemoteEngineStart() {
+         return remoteEngineStart;
+      }
 
       public void setRemoteEngineStart(boolean remoteEngineStart) {
          this.remoteEngineStart = remoteEngineStart;
@@ -37,9 +38,16 @@ public class Car {
       }
 
       public void setKeylessAccess(boolean keylessAccess) {
-         this.remoteEngineStart = keylessAccess;
+         this.keylessAccess = keylessAccess;
       }
 
+      @Override
+      public String toString() {
+         return "Key{" +
+                 "remoteEngineStart=" + remoteEngineStart +
+                 ", keylessAccess=" + keylessAccess +
+                 '}';
+      }
    }
 
 
@@ -137,8 +145,6 @@ public class Car {
       }
 
    }
-
-
    @Override
    public String toString() {
       return "Car{" +
@@ -156,5 +162,6 @@ public class Car {
               ", summerTires=" + summerTires +
               '}';
    }
+
 }
 
