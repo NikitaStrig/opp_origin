@@ -98,6 +98,14 @@ public class Car extends Transport {
       this.registrationNumber = registrationNumber;
       this.numberOfSeats = numberOfSeats;
       key = new Key(false,false);
+      if (getYear() > 2016){
+         key.keylessAccess = true;
+         key.remoteEngineStart = true;
+      }
+      else {
+         key.keylessAccess = false;
+         key.remoteEngineStart = false;
+      }
       if (this.engineVolume <= 0) {
          this.engineVolume = 1.5;
       }

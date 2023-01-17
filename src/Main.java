@@ -6,12 +6,12 @@ public class Main {
         transport.Car[] mass = new transport.Car[6];
         transport.Bus[] massBus = new transport.Bus[3];
         int m = 1;
-        mass[0] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
-        mass[1] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
-        mass[2] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
-        mass[3] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
-        mass[4] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
-        mass[5] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 350, 1.7, "Meh", "Sedan","C447PV777",5);
+        mass[0] = new transport.Car("Lada", "Granta", "Yalow", 2015, "Russia", 120, 1.7, "Mrh", "Sedan","C347PV777",5);
+        mass[1] = new transport.Car("Audi", "Q7", "Black", 2018, "Germany", 350, 2.5, "Auto", "Sedan","C567PV777",5);
+        mass[2] = new transport.Car("BMW", "X5M", "Yalow", 2020, "Germany", 450, 2.0, "Auto", "Sedan","C747PV777",5);
+        mass[3] = new transport.Car("Suzuki", "Grand", "Red", 2017, "Japen", 250, 1.4, "Auto", "Sedan","C447PV777",5);
+        mass[4] = new transport.Car("Nissan", "Tiida", "Red", 2012, "Japen", 117, 1.6, "CVC", "Sedan","C457PV777",5);
+        mass[5] = new transport.Car("Lada", "Vesta", "Black", 2015, "Russia", 98, 1.6, "Meh", "Sedan","C442PV777",5);
         for (int i = 0; i < mass.length; i++) {
             System.out.println(mass[i]);
         }
