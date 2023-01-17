@@ -1,11 +1,6 @@
 package transport;
-public class Car {
-   private final String brand;
-   private final String model;
+public class Car extends Transport {
    private double engineVolume;
-   private String color;
-   private final int year;
-   private final String country;
    private String transmission;
    private final String bodyType;
    private String registrationNumber;
@@ -13,6 +8,7 @@ public class Car {
    private boolean winterTires;
    private boolean summerTires;
    Key key;
+   Transport transport;
 
 
    public class Key {
@@ -51,38 +47,12 @@ public class Car {
       }
    }
 
-
-   public String getBrand() {
-      return brand;
-   }
-
-   public String getModel() {
-      return model;
-   }
-
-
    public double getEngineVolume() {
       return engineVolume;
    }
 
    public void setEngineVolume(double engineVolume) {
       this.engineVolume = engineVolume;
-   }
-
-   public String getColor() {
-      return color;
-   }
-
-   public void setColor(String color) {
-      this.color = color;
-   }
-
-   public int getYear() {
-      return year;
-   }
-
-   public String getCountry() {
-      return country;
    }
 
    public void setWinterTires(boolean winterTires) {
@@ -118,32 +88,18 @@ public class Car {
    }
 
 
-
-   public Car(String brand, String model, double engineVolume, String color, int year, String country,
-              String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
-      this.brand = brand;
-      this.model = model;
+   public Car(String brand, String model, String color, int year, String country, double maxSpeed,  double engineVolume,
+               String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
+      super(brand, model, color, year, country, maxSpeed);
+      transport = new Transport(getBrand(),getModel(),getColor(),getYear(),getCountry(),getMaxSpeed());
       this.engineVolume = engineVolume;
-      this.color = color;
-      this.year = year;
-      this.country = country;
       this.transmission = transmission;
       this.bodyType = bodyType;
       this.registrationNumber = registrationNumber;
       this.numberOfSeats = numberOfSeats;
       key = new Key(false,false);
-      if (this.year >= 2018) {
-         key.keylessAccess = true;
-         key.remoteEngineStart = true;
-      }
-
-
-
       if (this.engineVolume <= 0) {
          this.engineVolume = 1.5;
-      }
-      if (this.color == "" || this.color == null) {
-         this.color = "White";
       }
       if (this.transmission == "" || this.transmission == null) {
          this.transmission = "Auto";
@@ -156,23 +112,15 @@ public class Car {
 
    @Override
    public String toString() {
-      return "Car{" +
-              "brand='" + brand + '\'' +
-              ", model='" + model + '\'' +
-              ", engineVolume=" + engineVolume +
-              ", color='" + color + '\'' +
-              ", year=" + year +
-              ", country='" + country + '\'' +
-              ", transmission='" + transmission + '\'' +
-              ", bodyType='" + bodyType + '\'' +
-              ", registrationNumber='" + registrationNumber + '\'' +
-              ", numberOfSeats=" + numberOfSeats +
-              ", winterTires=" + winterTires +
-              ", summerTires=" + summerTires +
-              ", key=" + key +
-              '}';
+      return transport +
+              "Car : "+ "engineVolume (" + engineVolume + ") " + " transmission= (" + transmission + ") " +
+              " bodyType (" + bodyType + ") " + " registrationNumber (" + registrationNumber + ") " +
+              " numberOfSeats (" + numberOfSeats + ") " + " winterTires (" + winterTires + ") " +
+              " summerTires (" + summerTires + ") " +
+              " key " + key + ") ";
    }
 }
+
 
 
 
