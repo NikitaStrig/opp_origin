@@ -2,7 +2,7 @@ package transport;
 
 public class Bus extends Transport {
     private String numberBus;
-    Transport transport;
+
 
     public String getNumberBus() {
         return numberBus;
@@ -12,14 +12,13 @@ public class Bus extends Transport {
         this.numberBus = numberBus;
     }
 
-    public Bus(String brand, String model, String color, int year, String country, double maxSpeed, String numberBus) {
-        super(brand, model, color, year, country, maxSpeed);
+    public Bus(String brand, String model, double engineVolume, String numberBus, Transport transport) {
+        super(brand, model, engineVolume);
         this.numberBus = numberBus;
-        transport = new Transport(getBrand(),getModel(),getColor(),getYear(),getCountry(),getMaxSpeed());
     }
 
-    @Override
-    public String toString() {
-        return transport + "numberBus (" + numberBus + ") ";
+}
+
+
     }
 }

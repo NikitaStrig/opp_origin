@@ -16,7 +16,6 @@ public class Car extends Transport {
       private boolean keylessAccess;
 
 
-
       public Key(boolean remoteEngineStart, boolean keylessAccess) {
          this.remoteEngineStart = remoteEngineStart;
          this.keylessAccess = keylessAccess;
@@ -88,10 +87,10 @@ public class Car extends Transport {
    }
 
 
-   public Car(String brand, String model, String color, int year, String country, double maxSpeed,  double engineVolume,
-               String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
+   public Car(String brand, String model, String color, int year, String country, double maxSpeed, double engineVolume,
+              String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
       super(brand, model, color, year, country, maxSpeed);
-      transport = new Transport(getBrand(),getModel(),getColor(),getYear(),getCountry(),getMaxSpeed());
+      //transport = new Transport(getBrand(),getModel(),getColor(),getYear(),getCountry(),getMaxSpeed());
       this.engineVolume = engineVolume;
       this.transmission = transmission;
       this.bodyType = bodyType;
