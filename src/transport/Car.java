@@ -1,8 +1,9 @@
 package transport;
-public class Car extends Transport {
-   public Car(String brand, String model, double engineVolume) {
-      super(brand, model, engineVolume);
+public class Car extends Transport<DriverB> {
+   public Car(String brand, String model, double engineVolume, DriverB draiver) {
+      super(brand, model, engineVolume, draiver);
    }
+
 
    @Override
    public void begin() {
@@ -37,6 +38,7 @@ public class Car extends Transport {
       }
 
    }
+
 }
 
 

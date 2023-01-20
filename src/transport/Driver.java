@@ -38,4 +38,13 @@ public abstract class Driver {
     public abstract void start();
     public abstract void finish();
     public abstract void needOil();
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "name='" + name + '\'' +
+                ", driverLicense=" + driverLicense +
+                ", expYears=" + expYears +
+                '}';
+    }
 }

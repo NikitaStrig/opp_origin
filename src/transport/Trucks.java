@@ -1,9 +1,10 @@
 package transport;
 
-public class Trucks extends Transport{
-    public Trucks(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+public class Trucks extends Transport<DriverC>{
+    public Trucks(String brand, String model, double engineVolume, DriverC draiver) {
+        super(brand, model, engineVolume, draiver);
     }
+
     @Override
     public void begin() {
         System.out.println("Тегач " + getModel() + " начил движение ");
