@@ -1,35 +1,11 @@
 package transport;
 public class Car extends Transport<DriverB> {
    Body body;
-   String bbody;
 
    public Car(String brand, String model, double engineVolume, DriverB draiver, Body body) {
       super(brand, model, engineVolume, draiver);
       this.body = body;
 
-      switch(this.body){
-         case SEDAN:
-            bbody = "Седан";
-            break;
-         case HATSHBACK:
-            bbody = "Хачбек";
-            break;
-         case COUPE:
-            bbody = "Купе";
-            break;
-         case UNIVERSAL:
-            bbody = "Универсал";
-            break;
-         case SUV:
-            bbody = "СУВ";
-            break;
-         case CROSSOVER:
-            bbody = "Кросовер";
-            break;
-         case PICKUP:
-            bbody = "Пикап";
-            break;
-      }
 
    }
 
@@ -68,15 +44,27 @@ public class Car extends Transport<DriverB> {
 
    }
 public enum Body{
-   SEDAN,
-   HATSHBACK,
-   COUPE,
-   UNIVERSAL,
-   SUV,
-   CROSSOVER,
-   PICKUP,
-   VAN,
-   MINIVAN;
+   SEDAN("Седан"),
+   HATSHBACK("Хачбек"),
+   COUPE("Купе"),
+   UNIVERSAL("Универсал"),
+   SUV("СУВ"),
+   CROSSOVER("Кроссовер"),
+   PICKUP("Пикап"),
+   VAN("ВАН"),
+   MINIVAN("Минивен");
+
+   private String BodyType;
+
+
+   Body(String bodyType) {
+      this.BodyType = bodyType;
+   }
+
+   // Создаем геттер для поля
+   public String getBodyType() {
+      return BodyType;
+   }
 
 }
 
@@ -92,8 +80,7 @@ public enum Body{
               ", engineVolume=" + getEngineVolume() +
               ", draiver=" + getDraiver() +
               '}' + " Car{" +
-              "body=" + bbody +
-              '}';
+              "body=" + getBody().BodyType+'}';
    }
 
    }
