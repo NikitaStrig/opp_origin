@@ -42,10 +42,10 @@ public class Main {
             System.out.println(massBus[i]);
         }
         System.out.println("-------");
-        massTrucks[0] = new Trucks("Ford","Mustang",3.5,driverC_1);
-        massTrucks[1] = new Trucks("BMV","Z1",3.5,driverC_2);
-        massTrucks[2] = new Trucks("Fiat","Lion",3.5,driverC_3);
-        massTrucks[3] = new Trucks("Chevrolet","Camaro",4.5,driverC_4);
+        massTrucks[0] = new Trucks("Ford","Mustang",3.5,driverC_1, Trucks.LoadCapacity.N1);
+        massTrucks[1] = new Trucks("BMV","Z1",3.5,driverC_2, Trucks.LoadCapacity.N2);
+        massTrucks[2] = new Trucks("Fiat","Lion",3.5,driverC_3, Trucks.LoadCapacity.N3);
+        massTrucks[3] = new Trucks("Chevrolet","Camaro",4.5,driverC_4, Trucks.LoadCapacity.N1);
         for (int i = 0; i < massTrucks.length; i++) {
             System.out.println(massTrucks[i]);
         }
