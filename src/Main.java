@@ -34,7 +34,7 @@ public class Main {
 
         }
             massBus[0] = new Bus("Ford","Mustang",3.5,driverD_1, Bus.CapacityBus.average);
-            massBus[1] = new Bus("BMV","Z1",3.5,driverD_2, Bus.CapacityBus.big);
+            massBus[1] = new Bus("BMV","Z1",3.5,driverD_2, Bus.CapacityBus.small);
             massBus[2] = new Bus("Fiat","Lion",3.5,driverD_3, Bus.CapacityBus.extraLarge);
             massBus[3] = new Bus("Chevrolet","Camaro",4.5,driverD_4, Bus.CapacityBus.especiallySmall);
         System.out.println("-------");
@@ -49,6 +49,7 @@ public class Main {
         for (int i = 0; i < massTrucks.length; i++) {
             System.out.println(massTrucks[i]);
         }
+        System.out.println("--------");
     printInfoDriverB(massCar);
         printInfoDriverC(massTrucks);
         printInfoDriverD(massBus);

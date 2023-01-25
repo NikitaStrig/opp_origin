@@ -1,12 +1,12 @@
 package transport;
 
 public class Bus extends Transport<DriverD> {
-  CapacityBus  capacityBus;
+    CapacityBus capacityBus;
+
     public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus) {
         super(brand, model, engineVolume, draiver);
         this.capacityBus = capacityBus;
     }
-
 
 
     @Override
@@ -42,16 +42,21 @@ public class Bus extends Transport<DriverD> {
         }
 
     }
-    public enum CapacityBus{
-        especiallySmall(0,10),
-        small(0,25),
-        average(40,50),
-        big(60,80),
-        extraLarge(100,120);
 
+    public CapacityBus getCapacityBus() {
+        return capacityBus;
+    }
+
+    public enum CapacityBus {
+        especiallySmall(0, 10),
+        small(0, 25),
+        average(40, 50),
+        big(60, 80),
+        extraLarge(100, 120);
         private int minCapacity, maxCapacity;
 
-        CapacityBus(int minCapacity, int maxCapacity){
+
+        CapacityBus(int minCapacity, int maxCapacity) {
             this.minCapacity = minCapacity;
             this.maxCapacity = maxCapacity;
         }
@@ -64,12 +69,31 @@ public class Bus extends Transport<DriverD> {
             return maxCapacity;
         }
 
-        @Override
-        public String toString() {
-            return "CapacityBus{" +
-                    "minCapacity=" + minCapacity +
-                    ", maxCapacity=" + maxCapacity +
-                    '}';
+
+    }
+
+
+    @Override
+    public String toString() {
+        if (this.getCapacityBus().minCapacity == 0) {
+            return "Transport{" +
+                    "brand='" + getBrand() + '\'' +
+                    ", model='" + getModel() + '\'' +
+                    ", engineVolume=" + getEngineVolume() +
+                    ", draiver=" + getDraiver() +
+                    '}' + " Car{" +
+                    "CapacityBus=" + getCapacityBus() + " : " + " Вместимость до "
+                    + getCapacityBus().maxCapacity + '}';
+
+        } else {
+            return "Transport{" +
+                    "brand='" + getBrand() + '\'' +
+                    ", model='" + getModel() + '\'' +
+                    ", engineVolume=" + getEngineVolume() +
+                    ", draiver=" + getDraiver() +
+                    '}' + " Car{" +
+                    "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().minCapacity + " до "
+                    + getCapacityBus().maxCapacity + '}';
         }
     }
-    }
+}
