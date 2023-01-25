@@ -7,12 +7,7 @@ public class Car extends Transport<DriverB> {
       super(brand, model, engineVolume, draiver);
       this.body = body;
       this.type = type;
-
-
-
    }
-
-
    @Override
    public void begin() {
       System.out.println("Автомобиль " + getModel() + " начил движение ");
@@ -41,18 +36,14 @@ public class Car extends Transport<DriverB> {
       for (i = 0; i < 4; i++) {
          System.out.println("Лутший круг" + i);
       }
-
    }
-
    @Override
    public void maxSpeed() {
       int i;
       for (i = 120; i < 1000; i = i * 2) {
          System.out.println("Максимальная скорость" + i);
       }
-
    }
-
    public String getType() {
       return type;
    }
@@ -60,35 +51,6 @@ public class Car extends Transport<DriverB> {
    public void setType(String type) {
       this.type = type;
    }
-
-
-   public enum Body{
-   SEDAN("Седан"),
-   HATSHBACK("Хачбек"),
-   COUPE("Купе"),
-   UNIVERSAL("Универсал"),
-   SUV("СУВ"),
-   CROSSOVER("Кроссовер"),
-   PICKUP("Пикап"),
-   VAN("ВАН"),
-   MINIVAN("Минивен");
-
-   private String BodyType;
-
-
-   Body(String bodyType) {
-      this.BodyType = bodyType;
-   }
-
-   // Создаем геттер для поля
-   public String getBodyType() {
-      return BodyType;
-   }
-
-   public void setBodyType(String bodyType) {
-      BodyType = bodyType;
-   }
-}
 
    public Body getBody() {
       return body;
@@ -103,18 +65,8 @@ public class Car extends Transport<DriverB> {
       if(getType() == "" || getType() == null){
       return printType();
    }
-      else{return "Transport{" +
-              "brand='" + getBrand() + '\'' +
-              ", model='" + getModel() + '\'' +
-              ", engineVolume=" + getEngineVolume() +
-              ", draiver=" + getDraiver() +
-              '}' + " Car{" +
+      else{return transportPrint() + " Car{" +
               "body=" + getBody() + " : " + getBody().getBodyType()+'}';
    }
-
    }
 }
-
-
-
-

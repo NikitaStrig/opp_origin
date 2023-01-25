@@ -25,27 +25,27 @@ public class Main {
 
 
 
-        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1, Car.Body.SEDAN,"Car");
-        massCar[1] = new Car("BMV","Z1",3.5,driverB_2, Car.Body.HATSHBACK,"Car");
-        massCar[2] = new Car("Fiat","Lion",3.5,driverB_3, Car.Body.CROSSOVER,"");
-        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4, Car.Body.SEDAN,null);
+        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1, Body.SEDAN,"Car");
+        massCar[1] = new Car("BMV","Z1",3.5,driverB_2, Body.HATSHBACK,"Car");
+        massCar[2] = new Car("Fiat","Lion",3.5,driverB_3, Body.CROSSOVER,"");
+        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4, Body.SEDAN,null);
         for (int i = 0; i < massCar.length; i++) {
             System.out.println(massCar[i]);
 
         }
-            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, Bus.CapacityBus.average,"Bus");
-            massBus[1] = new Bus("Mer","Atr",1.5,driverD_2, Bus.CapacityBus.small,"Bus");
-            massBus[2] = new Bus("Fiat","34",7.5,driverD_3, Bus.CapacityBus.extraLarge,null);
-            massBus[3] = new Bus("Reno","dust",6.5,driverD_4, Bus.CapacityBus.especiallySmall,"");
+            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, CapacityBus.average,"Bus");
+            massBus[1] = new Bus("Mer","Atr",1.5,driverD_2, CapacityBus.small,"Bus");
+            massBus[2] = new Bus("Fiat","34",7.5,driverD_3, CapacityBus.extraLarge,null);
+            massBus[3] = new Bus("Reno","dust",6.5,driverD_4, CapacityBus.especiallySmall,"");
         System.out.println("-------");
         for (int i = 0; i < massBus.length; i++) {
             System.out.println(massBus[i]);
         }
         System.out.println("-------");
-        massTrucks[0] = new Trucks("Myu","Mus",2.0,driverC_1, Trucks.LoadCapacity.N1, null);
-        massTrucks[1] = new Trucks("BMW","WW",2.5,driverC_2, Trucks.LoadCapacity.N2,"Trucks");
-        massTrucks[2] = new Trucks("Skoda","Cody",3.0,driverC_3, Trucks.LoadCapacity.N3, "Trucks");
-        massTrucks[3] = new Trucks("Chevrolet","Tum",5.5,driverC_4, Trucks.LoadCapacity.N1, null);
+        massTrucks[0] = new Trucks("Myu","Mus",2.0,driverC_1, LoadCapacity.N1, null);
+        massTrucks[1] = new Trucks("BMW","WW",2.5,driverC_2, LoadCapacity.N2,"Trucks");
+        massTrucks[2] = new Trucks("Skoda","Cody",3.0,driverC_3, LoadCapacity.N3, "Trucks");
+        massTrucks[3] = new Trucks("Chevrolet","Tum",5.5,driverC_4, LoadCapacity.N1, null);
         for (int i = 0; i < massTrucks.length; i++) {
             System.out.println(massTrucks[i]);
         }
