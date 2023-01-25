@@ -52,9 +52,6 @@ public class Trucks extends Transport<DriverC>{
         LoadCapacity(double loadLowe, double loadUp) {
             this.LoadUp = loadUp;
             this.LoadLowe = loadLowe;
-            if (getLoadLowe() == 999){
-
-            }
 
 
         }
