@@ -80,7 +80,7 @@ public enum Body{
               ", engineVolume=" + getEngineVolume() +
               ", draiver=" + getDraiver() +
               '}' + " Car{" +
-              "body=" + getBody().BodyType+'}';
+              "body=" + getBody() + " : " + getBody().BodyType+'}';
    }
 
    }
