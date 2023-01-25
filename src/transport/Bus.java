@@ -69,13 +69,19 @@ public class Bus extends Transport<DriverD> {
             return maxCapacity;
         }
 
+        public void setMinCapacity(int minCapacity) {
+            this.minCapacity = minCapacity;
+        }
 
+        public void setMaxCapacity(int maxCapacity) {
+            this.maxCapacity = maxCapacity;
+        }
     }
 
 
     @Override
     public String toString() {
-        if (this.getCapacityBus().minCapacity == 0) {
+        if (this.getCapacityBus().getMinCapacity() == 0) {
             return "Transport{" +
                     "brand='" + getBrand() + '\'' +
                     ", model='" + getModel() + '\'' +
@@ -83,7 +89,7 @@ public class Bus extends Transport<DriverD> {
                     ", draiver=" + getDraiver() +
                     '}' + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " : " + " Вместимость до "
-                    + getCapacityBus().maxCapacity + '}';
+                    + getCapacityBus().getMaxCapacity() + '}';
 
         } else {
             return "Transport{" +
@@ -92,8 +98,8 @@ public class Bus extends Transport<DriverD> {
                     ", engineVolume=" + getEngineVolume() +
                     ", draiver=" + getDraiver() +
                     '}' + " Car{" +
-                    "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().minCapacity + " до "
-                    + getCapacityBus().maxCapacity + '}';
+                    "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
+                    + getCapacityBus().getMinCapacity() + '}';
         }
     }
 }

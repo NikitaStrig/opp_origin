@@ -72,6 +72,10 @@ public enum Body{
       return body;
    }
 
+   public void setBody(Body body) {
+      this.body = body;
+   }
+
    @Override
    public String toString() {
       return "Transport{" +
@@ -80,7 +84,7 @@ public enum Body{
               ", engineVolume=" + getEngineVolume() +
               ", draiver=" + getDraiver() +
               '}' + " Car{" +
-              "body=" + getBody() + " : " + getBody().BodyType+'}';
+              "body=" + getBody() + " : " + getBody().getBodyType()+'}';
    }
 
    }

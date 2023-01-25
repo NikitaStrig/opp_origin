@@ -75,7 +75,7 @@ public class Trucks extends Transport<DriverC>{
                 ", draiver=" + getDraiver() +
                 '}' + " Car{" +
                 "loadCapacity=" + getLoadCapacity() + " : " + " Грузоподъемности  до "
-                + getLoadCapacity().LoadUp + '}';
+                + getLoadCapacity().getLoadUp() + '}';
 
         }
         if (this.loadCapacity.getLoadUp() == 999) {
@@ -86,7 +86,7 @@ public class Trucks extends Transport<DriverC>{
                     ", draiver=" + getDraiver() +
                     '}' + " Car{" +
                     "loadCapacity=" + getLoadCapacity() + " : " + " Грузоподъемности  свыше "
-                    + getLoadCapacity().LoadLowe + '}';
+                    + getLoadCapacity().getLoadLowe() + '}';
 
         } else {return "Transport{" +
         "brand='" + getBrand() + '\'' +
@@ -94,7 +94,7 @@ public class Trucks extends Transport<DriverC>{
         ", engineVolume=" + getEngineVolume() +
         ", draiver=" + getDraiver() +
                   '}' + " Car{" +
-                   "loadCapacity=" + getLoadCapacity() + " : " + getLoadCapacity().LoadLowe + " до " + getLoadCapacity().LoadUp + '}';
+                   "loadCapacity=" + getLoadCapacity() + " : " + getLoadCapacity().getLoadLowe() + " до " + getLoadCapacity().getLoadUp() + '}';
         }
 }
 }
