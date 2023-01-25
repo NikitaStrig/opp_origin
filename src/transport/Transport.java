@@ -51,6 +51,7 @@ abstract class Transport <T extends Driver> implements Competing {
 
     public abstract void begin();
     public abstract void finish();
+    public abstract String printType();
 
 
 

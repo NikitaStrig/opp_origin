@@ -1,10 +1,13 @@
 package transport;
 public class Car extends Transport<DriverB> {
    Body body;
+   String type;
 
-   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body) {
+   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type) {
       super(brand, model, engineVolume, draiver);
       this.body = body;
+      this.type = type;
+
 
 
    }
@@ -20,6 +23,12 @@ public class Car extends Transport<DriverB> {
       System.out.println("Автомобиль" + getModel() + " закончил движение ");
 
    }
+
+   @Override
+   public String printType() {
+      return "Данных по транспортному средству недостаточно";
+   }
+
 
    @Override
    public void pitStop() {
@@ -43,7 +52,17 @@ public class Car extends Transport<DriverB> {
       }
 
    }
-public enum Body{
+
+   public String getType() {
+      return type;
+   }
+
+   public void setType(String type) {
+      this.type = type;
+   }
+
+
+   public enum Body{
    SEDAN("Седан"),
    HATSHBACK("Хачбек"),
    COUPE("Купе"),
@@ -66,6 +85,9 @@ public enum Body{
       return BodyType;
    }
 
+   public void setBodyType(String bodyType) {
+      BodyType = bodyType;
+   }
 }
 
    public Body getBody() {
@@ -78,7 +100,10 @@ public enum Body{
 
    @Override
    public String toString() {
-      return "Transport{" +
+      if(getType() == "" || getType() == null){
+      return printType();
+   }
+      else{return "Transport{" +
               "brand='" + getBrand() + '\'' +
               ", model='" + getModel() + '\'' +
               ", engineVolume=" + getEngineVolume() +
@@ -88,6 +113,7 @@ public enum Body{
    }
 
    }
+}
 
 
 

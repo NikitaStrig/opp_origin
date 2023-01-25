@@ -2,12 +2,22 @@ package transport;
 
 public class Trucks extends Transport<DriverC>{
     LoadCapacity loadCapacity;
-    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity) {
+    String type;
+    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity,String type) {
         super(brand, model, engineVolume, draiver);
         this.loadCapacity = loadCapacity;
+        this.type = type;
     }
     public LoadCapacity getLoadCapacity() {
         return loadCapacity;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -32,6 +42,10 @@ public class Trucks extends Transport<DriverC>{
             System.out.println("Лутший круз" + i);
         }
 
+    }
+    @Override
+    public String printType() {
+        return "Данных по транспортному средству недостаточно";
     }
 
 
@@ -67,6 +81,9 @@ public class Trucks extends Transport<DriverC>{
 
     @Override
     public String toString() {
+        if(getType() == "" || getType() == null){
+            return printType();
+        }
         if (this.loadCapacity.getLoadLowe() == 0) {
             return "Transport{" +
                 "brand='" + getBrand() + '\'' +

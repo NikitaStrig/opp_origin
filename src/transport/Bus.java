@@ -2,12 +2,21 @@ package transport;
 
 public class Bus extends Transport<DriverD> {
     CapacityBus capacityBus;
+    String type;
 
-    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus) {
+    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
         super(brand, model, engineVolume, draiver);
         this.capacityBus = capacityBus;
+        this.type = type;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public void begin() {
@@ -32,6 +41,11 @@ public class Bus extends Transport<DriverD> {
             System.out.println("Лутший круз" + i);
         }
 
+    }
+
+    @Override
+    public String printType() {
+        return "Данных по транспортному средству недостаточно";
     }
 
     @Override
@@ -81,6 +95,9 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public String toString() {
+        if(getType() == "" || getType() == null){
+            return printType();
+        }
         if (this.getCapacityBus().getMinCapacity() == 0) {
             return "Transport{" +
                     "brand='" + getBrand() + '\'' +
