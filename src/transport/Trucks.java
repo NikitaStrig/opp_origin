@@ -96,6 +96,7 @@ public class Trucks extends Transport<DriverC>{
                   '}' + " Car{" +
                    "loadCapacity=" + getLoadCapacity() + " : " + getLoadCapacity().getLoadLowe() + " до " + getLoadCapacity().getLoadUp() + '}';
         }
+
 }
 }
 
