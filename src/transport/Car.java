@@ -1,7 +1,36 @@
 package transport;
 public class Car extends Transport<DriverB> {
-   public Car(String brand, String model, double engineVolume, DriverB draiver) {
+   Body body;
+   String bbody;
+
+   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body) {
       super(brand, model, engineVolume, draiver);
+      this.body = body;
+
+      switch(this.body){
+         case SEDAN:
+            bbody = "Седан";
+            break;
+         case HATSHBACK:
+            bbody = "Хачбек";
+            break;
+         case COUPE:
+            bbody = "Купе";
+            break;
+         case UNIVERSAL:
+            bbody = "Универсал";
+            break;
+         case SUV:
+            bbody = "СУВ";
+            break;
+         case CROSSOVER:
+            bbody = "Кросовер";
+            break;
+         case PICKUP:
+            bbody = "Пикап";
+            break;
+      }
+
    }
 
 
@@ -25,7 +54,7 @@ public class Car extends Transport<DriverB> {
    public void beast() {
       int i;
       for (i = 0; i < 4; i++) {
-         System.out.println("Лутший круз" + i);
+         System.out.println("Лутший круг" + i);
       }
 
    }
@@ -38,8 +67,36 @@ public class Car extends Transport<DriverB> {
       }
 
    }
+public enum Body{
+   SEDAN,
+   HATSHBACK,
+   COUPE,
+   UNIVERSAL,
+   SUV,
+   CROSSOVER,
+   PICKUP,
+   VAN,
+   MINIVAN;
 
 }
+
+   public Body getBody() {
+      return body;
+   }
+
+   @Override
+   public String toString() {
+      return "Transport{" +
+              "brand='" + getBrand() + '\'' +
+              ", model='" + getModel() + '\'' +
+              ", engineVolume=" + getEngineVolume() +
+              ", draiver=" + getDraiver() +
+              '}' + " Car{" +
+              "body=" + bbody +
+              '}';
+   }
+
+   }
 
 
 

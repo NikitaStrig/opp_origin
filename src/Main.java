@@ -25,10 +25,10 @@ public class Main {
 
 
 
-        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1);
-        massCar[1] = new Car("BMV","Z1",3.5,driverB_2);
-        massCar[2] = new Car("Fiat","Lion",3.5,driverB_3);
-        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4);
+        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1, Car.Body.SEDAN);
+        massCar[1] = new Car("BMV","Z1",3.5,driverB_2, Car.Body.HATSHBACK);
+        massCar[2] = new Car("Fiat","Lion",3.5,driverB_3, Car.Body.CROSSOVER);
+        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4, Car.Body.SEDAN);
         for (int i = 0; i < massCar.length; i++) {
             System.out.println(massCar[i]);
 
@@ -76,6 +76,7 @@ public class Main {
         }
 
     }
+
 
 
 }
