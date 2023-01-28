@@ -57,13 +57,7 @@ public class Main {
 
         }
 
-    public static void  checkTrCar(Car[] mass) throws TransportTypeException {
-        for (int i = 0; i < mass.length; i++) {
-            if (mass[i].getType() == "Bus"){
-                throw new TransportTypeException("Автобусы диагностику не проходят");
-            }
-        }
-    }
+
 
     private static void printInfoDriverB(Car mass[]){
         for (int i = 0; i < mass.length; i++) {
@@ -84,6 +78,8 @@ public class Main {
             System.out.println("водитель " +mass[i].getDraiver()+"управляет автомобилем "
                     +mass[i].getBrand()+ " и будет участвовать в заезде");
         }
+
+
 
     }
 

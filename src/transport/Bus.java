@@ -8,6 +8,13 @@ public class Bus extends Transport<DriverD> {
         super(brand, model, engineVolume, draiver);
         this.capacityBus = capacityBus;
         this.type = type;
+        if (this.type == "Bus") {
+            try {
+                throw new TransportTypeException("Автобус не должен проходить диагностику");
+            } catch (TransportTypeException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public String getType() {
@@ -18,10 +25,12 @@ public class Bus extends Transport<DriverD> {
         return capacityBus;
     }
 
+
     @Override
-    public String DiagnostikD() throws TransportTypeException {
-        throw new TransportTypeException("Автобусы проходить диагностику не требуется");
+    String diagnostikPass() throws TransportTypeException {
+        throw new TransportTypeException("не должен");
     }
+
 
     public void setType(String type) {
         this.type = type;
