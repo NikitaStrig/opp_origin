@@ -37,6 +37,12 @@ public class Car extends Transport<DriverB> {
          System.out.println("Лутший круг" + i);
       }
    }
+
+   @Override
+   public String diagnostikPass() {
+      return "Диагностика не требуется";
+   }
+
    @Override
    public void maxSpeed() {
       int i;

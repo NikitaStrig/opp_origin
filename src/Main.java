@@ -2,6 +2,7 @@ import com.sun.jdi.connect.Transport;
 import transport.*;
 
 import javax.annotation.processing.Completion;
+import javax.tools.Diagnostic;
 
 public class Main {
     public static void main(String[] args) {
@@ -54,8 +55,16 @@ public class Main {
         printInfoDriverC(massTrucks);
         printInfoDriverD(massBus);
 
-
         }
+
+    public static void  checkTrCar(Car[] mass) throws TransportTypeException {
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i].getType() == "Bus"){
+                throw new TransportTypeException("Автобусы диагностику не проходят");
+            }
+        }
+    }
+
     private static void printInfoDriverB(Car mass[]){
         for (int i = 0; i < mass.length; i++) {
             System.out.println("водитель " +mass[i].getDraiver()+"управляет автомобилем "
@@ -77,7 +86,5 @@ public class Main {
         }
 
     }
-
-
 
 }

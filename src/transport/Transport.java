@@ -1,6 +1,6 @@
 package transport;
 
-abstract class Transport <T extends Driver> implements Competing {
+ abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
@@ -56,14 +56,10 @@ abstract class Transport <T extends Driver> implements Competing {
                 ", draiver=" + draiver +
                 '}';
     }
-
+    abstract String diagnostikPass() throws TransportTypeException;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();
-
-
-
-
 
 }
 

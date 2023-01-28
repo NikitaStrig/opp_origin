@@ -34,6 +34,11 @@ public class Trucks extends Transport<DriverC> {
     }
 
     @Override
+    String diagnostikPass() throws TransportTypeException {
+        return null;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Пит стоп автомобиля ");
     }
@@ -51,7 +56,6 @@ public class Trucks extends Transport<DriverC> {
     public String printType() {
         return "Данных по транспортному средству недостаточно";
     }
-
 
     @Override
     public void maxSpeed() {

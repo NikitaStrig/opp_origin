@@ -18,10 +18,14 @@ public class Bus extends Transport<DriverD> {
         return capacityBus;
     }
 
+    @Override
+    public String DiagnostikD() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы проходить диагностику не требуется");
+    }
+
     public void setType(String type) {
         this.type = type;
     }
-
 
     @Override
     public void begin() {
@@ -68,12 +72,12 @@ public class Bus extends Transport<DriverD> {
             return printType();
         }
         if (this.getCapacityBus().getMinCapacity() == 0) {
-            return transportPrint() + " Car{" +
+            return  transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " : " + " Вместимость до "
                     + getCapacityBus().getMaxCapacity() + '}';
 
         } else {
-            return transportPrint() + " Car{" +
+            return  transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
                     + getCapacityBus().getMinCapacity() + '}';
         }
