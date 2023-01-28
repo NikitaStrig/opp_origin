@@ -39,6 +39,14 @@ abstract class Transport <T extends Driver> implements Competing {
         setDraiver(draiver);
     }
 
+    public String transportPrint() {
+        return "Transport{" +
+                "brand='" + getBrand() + '\'' +
+                ", model='" + getModel() + '\'' +
+                ", engineVolume=" + getEngineVolume() +
+                ", draiver=" + getDraiver() +
+                '}';
+    }
     @Override
     public String toString() {
         return "Transport{" +
@@ -51,6 +59,7 @@ abstract class Transport <T extends Driver> implements Competing {
 
     public abstract void begin();
     public abstract void finish();
+    public abstract String printType();
 
 
 

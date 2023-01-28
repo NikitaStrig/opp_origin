@@ -1,11 +1,26 @@
 package transport;
 
 public class Bus extends Transport<DriverD> {
+    CapacityBus capacityBus;
+    String type;
 
-    public Bus(String brand, String model, double engineVolume, DriverD draiver) {
+    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
         super(brand, model, engineVolume, draiver);
+        this.capacityBus = capacityBus;
+        this.type = type;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public CapacityBus getCapacityBus() {
+        return capacityBus;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
 
     @Override
@@ -34,11 +49,33 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
+    public String printType() {
+        return "Данных по транспортному средству недостаточно";
+    }
+
+    @Override
     public void maxSpeed() {
         int i;
         for (i = 120; i < 1000; i = i * 2) {
             System.out.println("Максимальная скорость" + i);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        if(getType() == "" || getType() == null){
+            return printType();
+        }
+        if (this.getCapacityBus().getMinCapacity() == 0) {
+            return transportPrint() + " Car{" +
+                    "CapacityBus=" + getCapacityBus() + " : " + " Вместимость до "
+                    + getCapacityBus().getMaxCapacity() + '}';
+
+        } else {
+            return transportPrint() + " Car{" +
+                    "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
+                    + getCapacityBus().getMinCapacity() + '}';
+        }
     }
 }
