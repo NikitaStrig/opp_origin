@@ -60,6 +60,7 @@ package transport;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();
+    abstract void checkType(String type);
 
 }
 

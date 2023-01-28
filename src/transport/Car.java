@@ -24,6 +24,11 @@ public class Car extends Transport<DriverB> {
       return "Данных по транспортному средству недостаточно";
    }
 
+   @Override
+   void checkType(String type) {
+
+   }
+
 
    @Override
    public void pitStop() {

@@ -58,6 +58,11 @@ public class Trucks extends Transport<DriverC> {
     }
 
     @Override
+    void checkType(String type) {
+
+    }
+
+    @Override
     public void maxSpeed() {
         int i;
         for (i = 120; i < 1000; i = i * 2) {

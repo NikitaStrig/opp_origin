@@ -8,13 +8,6 @@ public class Bus extends Transport<DriverD> {
         super(brand, model, engineVolume, draiver);
         this.capacityBus = capacityBus;
         this.type = type;
-        if (this.type == "Bus") {
-            try {
-                throw new TransportTypeException("Автобус не должен проходить диагностику");
-            } catch (TransportTypeException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 
     public String getType() {
@@ -27,10 +20,15 @@ public class Bus extends Transport<DriverD> {
 
 
     @Override
-    String diagnostikPass() throws TransportTypeException {
-        throw new TransportTypeException("не должен");
+    String diagnostikPass(){
+        if (this.type == "Bus") {
+            try {
+                throw new TransportTypeException("Автобус не должен проходить диагностику");
+            } catch (TransportTypeException e) {
+                throw new RuntimeException(e);
+            }
+        } return "Проверка";
     }
-
 
     public void setType(String type) {
         this.type = type;
@@ -67,6 +65,11 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
+    void checkType(String type) {
+
+    }
+
+    @Override
     public void maxSpeed() {
         int i;
         for (i = 120; i < 1000; i = i * 2) {
@@ -86,7 +89,7 @@ public class Bus extends Transport<DriverD> {
                     + getCapacityBus().getMaxCapacity() + '}';
 
         } else {
-            return  transportPrint() + " Car{" +
+            return  diagnostikPass() + transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
                     + getCapacityBus().getMinCapacity() + '}';
         }
