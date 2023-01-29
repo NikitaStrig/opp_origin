@@ -5,10 +5,11 @@ import javax.annotation.processing.Completion;
 import javax.tools.Diagnostic;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TransportTypeException {
         transport.Car[] massCar = new transport.Car[4];
         transport.Bus[] massBus = new transport.Bus[4];
         transport.Trucks[] massTrucks = new transport.Trucks[4];
+
         DriverB driverB_1 = new DriverB("Max",true,5);
         DriverB driverB_2 = new DriverB("Pol",true,3);
         DriverB driverB_3 = new DriverB("Zed",true,6);
@@ -23,20 +24,21 @@ public class Main {
         DriverD driverD_2 = new DriverD("Pol",true,3);
         DriverD driverD_3 = new DriverD("Zed",true,6);
         DriverD driverD_4 = new DriverD("Max",true,1);
+        DriverD driverD_5 = new DriverD("Max",true,1);
 
 
 
-        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1, Body.SEDAN,"Car");
-        massCar[1] = new Car("BMV","Z1",3.5,driverB_2, Body.HATSHBACK,"Car");
+        massCar[0] = new Car("Ford","Mustang",3.5,driverB_1, Body.SEDAN,"Bus");
+        massCar[1] = new Car("BMV","Z1",3.5,driverB_2, Body.HATSHBACK,"Bas");
         massCar[2] = new Car("Fiat","Lion",3.5,driverB_3, Body.CROSSOVER,"");
-        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4, Body.SEDAN,null);
+        massCar[3] = new Car("Chevrolet","Camaro",4.5,driverB_4, Body.SEDAN,"Car");
         for (int i = 0; i < massCar.length; i++) {
             System.out.println(massCar[i]);
 
         }
-            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, CapacityBus.average,"Bus");
-            massBus[1] = new Bus("Mer","Atr",1.5,driverD_2, CapacityBus.small,"Bus");
-            massBus[2] = new Bus("Fiat","34",7.5,driverD_3, CapacityBus.extraLarge,null);
+            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, CapacityBus.average,"Сфк");
+            massBus[1] = new Bus("Mer","Atr",1.5,driverD_2, CapacityBus.small,"Car");
+            massBus[2] = new Bus("Fiat","34",7.5,driverD_3, CapacityBus.extraLarge,"Bus");
             massBus[3] = new Bus("Reno","dust",6.5,driverD_4, CapacityBus.especiallySmall,"");
         System.out.println("-------");
         for (int i = 0; i < massBus.length; i++) {
@@ -50,14 +52,16 @@ public class Main {
         for (int i = 0; i < massTrucks.length; i++) {
             System.out.println(massTrucks[i]);
         }
+
         System.out.println("--------");
     printInfoDriverB(massCar);
         printInfoDriverC(massTrucks);
         printInfoDriverD(massBus);
+        checToBus(massCar);
+
+
 
         }
-
-
 
     private static void printInfoDriverB(Car mass[]){
         for (int i = 0; i < mass.length; i++) {
@@ -78,9 +82,14 @@ public class Main {
             System.out.println("водитель " +mass[i].getDraiver()+"управляет автомобилем "
                     +mass[i].getBrand()+ " и будет участвовать в заезде");
         }
-
-
-
     }
-
-}
+    private static void checToBus (Car[] mass)  {
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i].getType() == "Car"){
+                System.out.println(mass[i]);
+            } else if (mass[i].getType() == "Bus") {
+                throw new TransportTypeException("Error");
+            }
+            }
+        }
+    }

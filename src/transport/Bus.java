@@ -20,15 +20,15 @@ public class Bus extends Transport<DriverD> {
 
 
     @Override
-    String diagnostikPass(){
+   boolean diagnostikPass(){
         if (this.type == "Bus") {
             try {
                 throw new TransportTypeException("Автобус не должен проходить диагностику");
             } catch (TransportTypeException e) {
                 throw new RuntimeException(e);
             }
-        } return "Проверка";
-    }
+        } return false; }
+
 
     public void setType(String type) {
         this.type = type;
@@ -89,7 +89,7 @@ public class Bus extends Transport<DriverD> {
                     + getCapacityBus().getMaxCapacity() + '}';
 
         } else {
-            return  diagnostikPass() + transportPrint() + " Car{" +
+            return    transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
                     + getCapacityBus().getMinCapacity() + '}';
         }

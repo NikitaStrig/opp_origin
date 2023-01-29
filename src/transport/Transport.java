@@ -56,7 +56,7 @@ package transport;
                 ", draiver=" + draiver +
                 '}';
     }
-    abstract String diagnostikPass() throws TransportTypeException;
+    abstract boolean diagnostikPass() throws TransportTypeException;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();

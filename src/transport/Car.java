@@ -44,8 +44,8 @@ public class Car extends Transport<DriverB> {
    }
 
    @Override
-   public String diagnostikPass() {
-      return "Диагностика не требуется";
+   public boolean diagnostikPass() throws TransportTypeException {
+      return true;
    }
 
    @Override

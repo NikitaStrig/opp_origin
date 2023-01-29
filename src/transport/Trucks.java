@@ -34,8 +34,8 @@ public class Trucks extends Transport<DriverC> {
     }
 
     @Override
-    String diagnostikPass() throws TransportTypeException {
-        return null;
+    boolean diagnostikPass() throws TransportTypeException {
+        return true;
     }
 
     @Override
