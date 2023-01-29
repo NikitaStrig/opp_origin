@@ -4,8 +4,9 @@ public class Trucks extends Transport<DriverC> {
     LoadCapacity loadCapacity;
     String type;
 
-    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity, String type) {
-        super(brand, model, engineVolume, draiver);
+    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity, String type,
+                  boolean diagnostik) {
+        super(brand, model, engineVolume, draiver, diagnostik);
         this.loadCapacity = loadCapacity;
         this.type = type;
     }
@@ -34,8 +35,8 @@ public class Trucks extends Transport<DriverC> {
     }
 
     @Override
-    boolean diagnostikPass() throws TransportTypeException {
-        return true;
+    public boolean diagnostikPass() {
+        return this.isDiagnostik();
     }
 
     @Override

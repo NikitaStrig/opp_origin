@@ -4,8 +4,9 @@ public class Bus extends Transport<DriverD> {
     CapacityBus capacityBus;
     String type;
 
-    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
-        super(brand, model, engineVolume, draiver);
+    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type,
+               boolean diagnistik) {
+        super(brand, model, engineVolume, draiver, diagnistik);
         this.capacityBus = capacityBus;
         this.type = type;
     }
@@ -20,15 +21,9 @@ public class Bus extends Transport<DriverD> {
 
 
     @Override
-   boolean diagnostikPass(){
-        if (this.type == "Bus") {
-            try {
-                throw new TransportTypeException("Автобус не должен проходить диагностику");
-            } catch (TransportTypeException e) {
-                throw new RuntimeException(e);
-            }
-        } return false; }
-
+   public boolean diagnostikPass() throws TransportTypeException {
+        throw new TransportTypeException("Ошибка: Диагностика не нужна");
+    }
 
     public void setType(String type) {
         this.type = type;

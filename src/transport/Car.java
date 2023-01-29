@@ -3,8 +3,8 @@ public class Car extends Transport<DriverB> {
    Body body;
    String type;
 
-   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type) {
-      super(brand, model, engineVolume, draiver);
+   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type, boolean diagnostik) {
+      super(brand, model, engineVolume, draiver,diagnostik);
       this.body = body;
       this.type = type;
    }
@@ -44,8 +44,8 @@ public class Car extends Transport<DriverB> {
    }
 
    @Override
-   public boolean diagnostikPass() throws TransportTypeException {
-      return true;
+   public boolean diagnostikPass()  {
+      return this.isDiagnostik();
    }
 
    @Override
