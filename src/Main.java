@@ -36,7 +36,7 @@ public class Main {
             System.out.println(massCar[i]);
 
         }
-            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, CapacityBus.average,"Сфк");
+            massBus[0] = new Bus("Ford","F100",6.0,driverD_1, CapacityBus.average,"Car");
             massBus[1] = new Bus("Mer","Atr",1.5,driverD_2, CapacityBus.small,"Car");
             massBus[2] = new Bus("Fiat","34",7.5,driverD_3, CapacityBus.extraLarge,"Bus");
             massBus[3] = new Bus("Reno","dust",6.5,driverD_4, CapacityBus.especiallySmall,"");
