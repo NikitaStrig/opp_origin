@@ -1,12 +1,11 @@
 package transport;
 public class Car extends Transport<DriverB> {
    Body body;
-   String type;
 
-   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type, boolean diagnostik) {
-      super(brand, model, engineVolume, draiver,diagnostik);
+   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type) {
+      super(brand, model, engineVolume, draiver,type);
       this.body = body;
-      this.type = type;
+
    }
    @Override
    public void begin() {
@@ -44,8 +43,8 @@ public class Car extends Transport<DriverB> {
    }
 
    @Override
-   public boolean diagnostikPass()  {
-      return this.isDiagnostik();
+   public boolean diagnostikPass() {
+     return false;
    }
 
    @Override
@@ -55,13 +54,7 @@ public class Car extends Transport<DriverB> {
          System.out.println("Максимальная скорость" + i);
       }
    }
-   public String getType() {
-      return type;
-   }
 
-   public void setType(String type) {
-      this.type = type;
-   }
 
    public Body getBody() {
       return body;

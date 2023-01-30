@@ -2,18 +2,14 @@ package transport;
 
 public class Bus extends Transport<DriverD> {
     CapacityBus capacityBus;
-    String type;
 
-    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type,
-               boolean diagnistik) {
-        super(brand, model, engineVolume, draiver, diagnistik);
+
+    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
+        super(brand, model, engineVolume, draiver,type);
         this.capacityBus = capacityBus;
-        this.type = type;
+
     }
 
-    public String getType() {
-        return type;
-    }
 
     public CapacityBus getCapacityBus() {
         return capacityBus;
@@ -21,13 +17,10 @@ public class Bus extends Transport<DriverD> {
 
 
     @Override
-   public boolean diagnostikPass() throws TransportTypeException {
-        throw new TransportTypeException("Ошибка: Диагностика не нужна");
+   public boolean diagnostikPass() throws  TransportTypeException  {
+       throw new TransportTypeException();
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     @Override
     public void begin() {

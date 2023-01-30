@@ -5,7 +5,8 @@ package transport;
     private final String model;
     private double engineVolume;
     private T draiver;
-    private boolean diagnostik;
+    private String type;
+
 
 
 
@@ -33,15 +34,17 @@ package transport;
         this.draiver = draiver;
     }
 
-     public Transport(String brand, String model, double engineVolume, T draiver, boolean diagnostik) {
+     public Transport(String brand, String model, double engineVolume, T draiver,String type) {
          this.brand = brand;
          this.model = model;
          this.engineVolume = engineVolume;
          this.draiver = draiver;
-         this.diagnostik = diagnostik;
+         this.type = type;
      }
-     public boolean isDiagnostik(){return diagnostik;}
 
+     public String getType() {
+         return type;
+     }
 
      public String transportPrint() {
         return "Transport{" +
