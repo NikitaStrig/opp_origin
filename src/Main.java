@@ -74,7 +74,7 @@ public class Main {
 
         public static void checkTran(Transport... transports) throws TransportTypeException {
         for (Transport transport : transports) {
-           if (transport.diagnostikPass()){
+           if (!transport.diagnostikPass()){
                throw new TransportTypeException();
            }
            else {

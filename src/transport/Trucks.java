@@ -28,7 +28,7 @@ public class Trucks extends Transport<DriverC> {
 
     @Override
     public boolean diagnostikPass() {
-   return false;
+   return true;
     }
 
     @Override
