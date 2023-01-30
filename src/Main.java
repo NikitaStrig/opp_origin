@@ -52,8 +52,8 @@ public class Main {
         System.out.println("--------");
 
         Car test1 = new Car("Ford", "Mustang", 3.5, new DriverB("max", true, 5), Body.SEDAN, "Car");
-        Bus test3 = new Bus("Ford", "F100", 6.0, new DriverD("max", false, 5), CapacityBus.average, "Bus");
-        Trucks test2 = new Trucks("Chevrolet", "Tum", 5.5, new DriverC("max", true, 5), LoadCapacity.N1, "Track");
+        Bus test2 = new Bus("Ford", "F100", 6.0, new DriverD("max", false, 5), CapacityBus.average, "Bus");
+        Trucks test3 = new Trucks("Chevrolet", "Tum", 5.5, new DriverC("max", true, 5), LoadCapacity.N1, "Track");
             checkTran(test1, test2, test3);
 
 
