@@ -57,7 +57,7 @@ public class Main {
         try {
             checkTran(test1,test2,test3);
         }catch (TransportTypeException e){
-            System.out.println("Диагностика не требуется");}
+            System.out.println("Error");}
         finally {
             System.out.println("Complite");
         }
