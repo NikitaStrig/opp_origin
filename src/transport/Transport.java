@@ -1,13 +1,16 @@
 package transport;
 
- public abstract class Transport <T extends Driver> implements Competing {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T draiver;
     private String type;
-
-
+    Mechanic mechanic;
+    List<transport.Mechanic> mechanicList = new ArrayList<>();
 
 
     public String getBrand() {
@@ -34,12 +37,24 @@ package transport;
         this.draiver = draiver;
     }
 
-     public Transport(String brand, String model, double engineVolume, T draiver,String type) {
+    public Mechanic getMechanic() {
+        return mechanic;
+    }
+
+    public List<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
+
+    public Transport(String brand, String model, double engineVolume, T draiver, String type,Mechanic mechanic) {
          this.brand = brand;
          this.model = model;
          this.engineVolume = engineVolume;
          this.draiver = draiver;
          this.type = type;
+         this.mechanic = mechanic;
+
+
+
      }
 
      public String getType() {
@@ -55,21 +70,28 @@ package transport;
                 '}';
     }
 
-     @Override
-     public String toString() {
-         return "Transport{" +
-                 "brand='" + brand + '\'' +
-                 ", model='" + model + '\'' +
-                 ", engineVolume=" + engineVolume +
-                 ", draiver=" + draiver +
-                 '}';
-     }
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", draiver=" + draiver +
+                ", type='" + type + '\'' +
+                ", mechanic=" + mechanic +
+                ", mechanicList=" + mechanicList +
+                '}';
+    }
+
 
      public abstract boolean diagnostikPass() throws TransportTypeException;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();
     abstract void checkType(String type);
+
+
+
 
 }
 
