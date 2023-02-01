@@ -1,10 +1,12 @@
 package transport;
 
-abstract class Transport <T extends Driver> implements Competing {
+ public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T draiver;
+    private String type;
+
 
 
 
@@ -32,14 +34,19 @@ abstract class Transport <T extends Driver> implements Competing {
         this.draiver = draiver;
     }
 
-    public Transport(String brand, String model, double engineVolume, T draiver) {
-        this.brand = brand;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        setDraiver(draiver);
-    }
+     public Transport(String brand, String model, double engineVolume, T draiver,String type) {
+         this.brand = brand;
+         this.model = model;
+         this.engineVolume = engineVolume;
+         this.draiver = draiver;
+         this.type = type;
+     }
 
-    public String transportPrint() {
+     public String getType() {
+         return type;
+     }
+
+     public String transportPrint() {
         return "Transport{" +
                 "brand='" + getBrand() + '\'' +
                 ", model='" + getModel() + '\'' +
@@ -47,23 +54,22 @@ abstract class Transport <T extends Driver> implements Competing {
                 ", draiver=" + getDraiver() +
                 '}';
     }
-    @Override
-    public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                ", draiver=" + draiver +
-                '}';
-    }
 
+     @Override
+     public String toString() {
+         return "Transport{" +
+                 "brand='" + brand + '\'' +
+                 ", model='" + model + '\'' +
+                 ", engineVolume=" + engineVolume +
+                 ", draiver=" + draiver +
+                 '}';
+     }
+
+     public abstract boolean diagnostikPass() throws TransportTypeException;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();
-
-
-
-
+    abstract void checkType(String type);
 
 }
 

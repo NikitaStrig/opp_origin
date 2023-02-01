@@ -2,24 +2,23 @@ package transport;
 
 public class Bus extends Transport<DriverD> {
     CapacityBus capacityBus;
-    String type;
+
 
     public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
-        super(brand, model, engineVolume, draiver);
+        super(brand, model, engineVolume, draiver,type);
         this.capacityBus = capacityBus;
-        this.type = type;
+
     }
 
-    public String getType() {
-        return type;
-    }
 
     public CapacityBus getCapacityBus() {
         return capacityBus;
     }
 
-    public void setType(String type) {
-        this.type = type;
+
+    @Override
+   public boolean diagnostikPass() throws  TransportTypeException  {
+       throw new TransportTypeException();
     }
 
 
@@ -54,6 +53,11 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
+    void checkType(String type) {
+
+    }
+
+    @Override
     public void maxSpeed() {
         int i;
         for (i = 120; i < 1000; i = i * 2) {
@@ -68,12 +72,12 @@ public class Bus extends Transport<DriverD> {
             return printType();
         }
         if (this.getCapacityBus().getMinCapacity() == 0) {
-            return transportPrint() + " Car{" +
+            return  transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " : " + " Вместимость до "
                     + getCapacityBus().getMaxCapacity() + '}';
 
         } else {
-            return transportPrint() + " Car{" +
+            return    transportPrint() + " Car{" +
                     "CapacityBus=" + getCapacityBus() + " Вместимость " + getCapacityBus().getMinCapacity() + " до "
                     + getCapacityBus().getMinCapacity() + '}';
         }
