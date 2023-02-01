@@ -38,19 +38,19 @@ public class Main {
             System.out.println(massCar[i]);
 
         }
-        massBus[0] = new Bus("Ford", "F100", 6.0, driverD_1, CapacityBus.average, "Bus",Ivan);
-        massBus[1] = new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus",Bory);
+        massBus[0] = new Bus("Ford", "F100", 6.0, driverD_1, CapacityBus.average, "Bus", Ivan);
+        massBus[1] = new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Bory);
         massBus[2] = new Bus("Fiat", "34", 7.5, driverD_3, CapacityBus.extraLarge, "Bus", Max);
-        massBus[3] = new Bus("Reno", "dust", 6.5, driverD_4, CapacityBus.especiallySmall, "",Ivan);
+        massBus[3] = new Bus("Reno", "dust", 6.5, driverD_4, CapacityBus.especiallySmall, "", Ivan);
         System.out.println("-------");
         for (int i = 0; i < massBus.length; i++) {
             System.out.println(massBus[i]);
         }
         System.out.println("-------");
-        massTrucks[0] = new Trucks("Myu", "Mus", 2.0, driverC_1, LoadCapacity.N1, null,Bory);
-        massTrucks[1] = new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks",Max);
-        massTrucks[2] = new Trucks("Skoda", "Cody", 3.0, driverC_3, LoadCapacity.N3, "Trucks",Ivan);
-        massTrucks[3] = new Trucks("Chevrolet", "Tum", 5.5, driverC_4, LoadCapacity.N1, null,Max);
+        massTrucks[0] = new Trucks("Myu", "Mus", 2.0, driverC_1, LoadCapacity.N1, null, Bory);
+        massTrucks[1] = new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max);
+        massTrucks[2] = new Trucks("Skoda", "Cody", 3.0, driverC_3, LoadCapacity.N3, "Trucks", Ivan);
+        massTrucks[3] = new Trucks("Chevrolet", "Tum", 5.5, driverC_4, LoadCapacity.N1, null, Max);
         for (int i = 0; i < massTrucks.length; i++) {
             System.out.println(massTrucks[i]);
         }
@@ -58,7 +58,7 @@ public class Main {
         System.out.println("--------");
 
         Car test1 = new Car("Ford", "Mustang", 3.5, new DriverB("max", true, 5), Body.SEDAN, "Car", Bory);
-        Bus test2 = new Bus("Ford", "F100", 6.0, new DriverD("max", false, 5), CapacityBus.average, "Bus",Max);
+        Bus test2 = new Bus("Ford", "F100", 6.0, new DriverD("max", false, 5), CapacityBus.average, "Bus", Max);
         Trucks test3 = new Trucks("Chevrolet", "Tum", 5.5, new DriverC("max", true, 5), LoadCapacity.N1, "Track", Ivan);
         checkTran(test1, test2, test3);
 
@@ -78,41 +78,34 @@ public class Main {
         allCars.add(massTrucks[0].getModel());
         allCars.add(massTrucks[1].getModel());
         allCars.add(massTrucks[2].getModel());
-       // -------------------------------------
+        // -------------------------------------
         printMechDriverAutoCar(allCars, massCar);
         printMechDriverAutoBus(allCars, massBus);
         printMechDriverAutoTrack(allCars, massTrucks);
         //----------------------------
         Queue<String> queue = new LinkedList<>();
         queue.offer(massCar[0].getModel());
-      //  queue.offer(massCar[1].getModel());
-      //  queue.offer(massCar[2].getModel());
-      //  queue.offer(massBus[0].getModel());
-      //  queue.offer(massBus[1].getModel());
-      //  queue.offer(massBus[2].getModel());
-      //  queue.offer(massTrucks[0].getModel());
-      //  queue.offer(massTrucks[1].getModel());
-      //  queue.offer(massTrucks[2].getModel());
+        //  queue.offer(massCar[1].getModel());
+        //  queue.offer(massCar[2].getModel());
+        //  queue.offer(massBus[0].getModel());
+        //  queue.offer(massBus[1].getModel());
+        //  queue.offer(massBus[2].getModel());
+        //  queue.offer(massTrucks[0].getModel());
+        //  queue.offer(massTrucks[1].getModel());
+        //  queue.offer(massTrucks[2].getModel());
         //-----------------
         System.out.println(queue.peek());
         ArrayDeque<String> states = new ArrayDeque<>();
-        states.add(massCar[0].getModel());
-        states.add(massCar[1].getModel());
-        states.add(massCar[2].getModel());
-      //  for (int j = 0; j < pac; j++) {
-            lastAdd(states,allCars,new ServiceStation("1"));
-      //  }
+      states.add(massCar[0].getModel());
 
-
+        lastAdd(states, allCars, new ServiceStation("1"));
 
 
     }
-
-
-   public static void lastAdd(Deque d,List arrayList,ServiceStation number){
+   public static void lastAdd(Deque d,List arrayList,ServiceStation number) throws  TransportTypeException{
        int i;
-       for (i = 3; i < arrayList.size(); i++) {
-           System.out.println(number.addAuto() + arrayList.get(i));
+       for (i = 1; i < arrayList.size(); i++) {
+               System.out.println(number.addAuto() + arrayList.get(i));
            d.addLast(arrayList.get(i));
            System.out.println(number.compliteTo() + d.getFirst());
            d.pollFirst();
@@ -122,7 +115,6 @@ public class Main {
     private static void printMechDriverAutoCar(List arrayList, Car[] car) {
         int i;
         int c;
-        //arrayList.forEach(System.out::println);
         for (i = 2; i < arrayList.size(); i++) {
             for (c = 0; c < car.length; c++)
                 if (arrayList.get(i) == car[c].getModel()) {
@@ -134,7 +126,6 @@ public class Main {
     private static void printMechDriverAutoBus(List arrayList, Bus[] bus) {
         int i;
         int b;
-        //arrayList.forEach(System.out::println);
         for (i = 0; i < arrayList.size(); i++) {
             for (b = 0; b < bus.length; b++)
                 if (arrayList.get(i) == bus[b].getModel()) {
@@ -146,7 +137,6 @@ public class Main {
     private static void printMechDriverAutoTrack(List arrayList, Trucks[] trucks) {
         int i;
         int t;
-        //arrayList.forEach(System.out::println);
         for (i = 0; i < arrayList.size(); i++) {
             for (t = 0; t < trucks.length; t++)
                 if (arrayList.get(i) == trucks[t].getModel()) {
