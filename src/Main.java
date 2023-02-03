@@ -9,7 +9,6 @@ public class Main {
         transport.Car[] massCar = new transport.Car[4];
         transport.Bus[] massBus = new transport.Bus[4];
         transport.Trucks[] massTrucks = new transport.Trucks[4];
-        int pac = 2;
         Mechanic Bory = new Mechanic("Bory", "Last", "TechPech");
         Mechanic Ivan = new Mechanic("Ivan", "Yota", "CarPar");
         Mechanic Max = new Mechanic("Max", "Fax", "AuTu");
@@ -76,7 +75,6 @@ public class Main {
                    + " " + allCars.get(i).getMechanic().getFirstName());
 
         }
-
         System.out.println("--------");
        Deque<String> state = new LinkedList<>();
        state.add("Audi");
@@ -93,44 +91,6 @@ public class Main {
                 new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max),state));
         System.out.println(ServiceStation.compliteTo(state));
     }
-
-
-
-    private static void printMechDriverAuto(List array, Transport transport) {
-        int i;
-        for (i = 0; i < array.size(); i++) {
-            if (transport.getModel() == array.get(i)){
-                System.out.println("Марка: " + array.get(i) + " Водитель: " + transport.getDraiver() +
-                        " Механник: " + transport.getMechanic().getFirstName() + " "
-                        + transport.getMechanic().getLastName());
-            }
-        }
-    }
-    private static void printMechDriverAutoBus(List arrayList, Bus[] bus) {
-        int i;
-        int b;
-        for (i = 0; i < arrayList.size(); i++) {
-            for (b = 0; b < bus.length; b++)
-                if (arrayList.get(i) == bus[b].getModel()) {
-                    System.out.println("Модель автобуса " + arrayList.get(i) + " Водитель " + bus[b].getDraiver().getName()
-                            + " Механик " + bus[b].getMechanic().getFirstName() + " " + bus[b].getMechanic().getLastName());
-                }
-        }
-    }
-    private static void printMechDriverAutoTrack(List arrayList, Trucks[] trucks) {
-        int i;
-        int t;
-        for (i = 0; i < arrayList.size(); i++) {
-            for (t = 0; t < trucks.length; t++)
-                if (arrayList.get(i) == trucks[t].getModel()) {
-                    System.out.println("Модель трака " + arrayList.get(i) + " Водитель " + trucks[t].getDraiver().getName()
-                            + " Механик " + trucks[t].getMechanic().getFirstName() + " " + trucks[t].getMechanic().getLastName());
-                }
-        }
-    }
-
-
-
 
 
     public static void checkTran(Transport... transports) throws TransportTypeException {

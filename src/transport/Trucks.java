@@ -26,7 +26,6 @@ public class Trucks extends Transport<DriverC,Mechanic> {
         System.out.println("Тегач" + getModel() + " закончил движение ");
 
     }
-
     @Override
     public boolean diagnostikPass() {
    return true;

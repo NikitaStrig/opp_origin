@@ -9,9 +9,7 @@ public class Bus extends Transport<DriverD,Mechanic> {
         super(brand, model, engineVolume, draiver,type,mechanic);
         this.capacityBus = capacityBus;
 
-
     }
-
 
     public CapacityBus getCapacityBus() {
         return capacityBus;

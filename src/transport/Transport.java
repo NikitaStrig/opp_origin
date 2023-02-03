@@ -52,9 +52,6 @@ public abstract class Transport <T extends Driver, M extends Mechanic> implement
          this.draiver = draiver;
          this.type = type;
          this.mechanic = mechanic;
-
-
-
      }
 
      public String getType() {
@@ -83,15 +80,11 @@ public abstract class Transport <T extends Driver, M extends Mechanic> implement
                 '}';
     }
 
-
      public abstract boolean diagnostikPass() throws TransportTypeException;
     public abstract void begin();
     public abstract void finish();
     public abstract String printType();
     abstract void checkType(String type);
-
-
-
 
 }
 
