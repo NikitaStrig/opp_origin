@@ -69,58 +69,29 @@ public class Main {
         System.out.println("--------");
 
         List<String> allCars = new ArrayList<>();
-        allCars.add(massCar[0].getModel());
-        allCars.add(massCar[1].getModel());
-        allCars.add(massCar[2].getModel());
-        allCars.add(massBus[0].getModel());
-        allCars.add(massBus[1].getModel());
-        allCars.add(massBus[2].getModel());
-        allCars.add(massTrucks[0].getModel());
-        allCars.add(massTrucks[1].getModel());
-        allCars.add(massTrucks[2].getModel());
+        allCars.add(test1.getModel());
+        allCars.add(test2.getModel());
+        allCars.add(test3.getModel());
         // -------------------------------------
-        printMechDriverAutoCar(allCars, massCar);
-        printMechDriverAutoBus(allCars, massBus);
-        printMechDriverAutoTrack(allCars, massTrucks);
+        printMechDriverAuto(allCars,);
+        //printMechDriverAutoBus(allCars, massBus);
+        //printMechDriverAutoTrack(allCars, massTrucks);
         //----------------------------
-        Queue<String> queue = new LinkedList<>();
-        queue.offer(massCar[0].getModel());
-        //  queue.offer(massCar[1].getModel());
-        //  queue.offer(massCar[2].getModel());
-        //  queue.offer(massBus[0].getModel());
-        //  queue.offer(massBus[1].getModel());
-        //  queue.offer(massBus[2].getModel());
-        //  queue.offer(massTrucks[0].getModel());
-        //  queue.offer(massTrucks[1].getModel());
-        //  queue.offer(massTrucks[2].getModel());
-        //-----------------
-        System.out.println(queue.peek());
-        ArrayDeque<String> states = new ArrayDeque<>();
-      states.add(massCar[0].getModel());
-
-        lastAdd(states, allCars, new ServiceStation("1"));
-
+     //   ArrayDeque<String> states = new ArrayDeque<>();
+      //  states.add(massCar[0].getModel());
 
     }
-   public static void lastAdd(Deque d,List arrayList,ServiceStation number) throws  TransportTypeException{
-       int i;
-       for (i = 1; i < arrayList.size(); i++) {
-               System.out.println(number.addAuto() + arrayList.get(i));
-           d.addLast(arrayList.get(i));
-           System.out.println(number.compliteTo() + d.getFirst());
-           d.pollFirst();
-       }
-   }
 
-    private static void printMechDriverAutoCar(List arrayList, Car[] car) {
+
+
+    private static void printMechDriverAuto(List array, Transport transport) {
         int i;
-        int c;
-        for (i = 2; i < arrayList.size(); i++) {
-            for (c = 0; c < car.length; c++)
-                if (arrayList.get(i) == car[c].getModel()) {
-                    System.out.println("Модель авто " + arrayList.get(i) + " Водитель " + car[c].getDraiver().getName()
-                            + " Механик " + car[c].getMechanic().getFirstName() + " " + car[c].getMechanic().getLastName());
-                }
+        for (i = 0; i < array.size(); i++) {
+            if (transport.getModel() == array.get(i)){
+                System.out.println("Марка: " + array.get(i) + " Водитель: " + transport.getDraiver() +
+                        " Механник: " + transport.getMechanic().getFirstName() + " "
+                        + transport.getMechanic().getLastName());
+            }
         }
     }
     private static void printMechDriverAutoBus(List arrayList, Bus[] bus) {
