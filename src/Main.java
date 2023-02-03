@@ -9,6 +9,11 @@ public class Main {
         transport.Car[] massCar = new transport.Car[4];
         transport.Bus[] massBus = new transport.Bus[4];
         transport.Trucks[] massTrucks = new transport.Trucks[4];
+        List<Mechanic> allMech = new ArrayList<>();
+        allMech.add(new Mechanic("Bory", "Last", "TechPech"));
+        allMech.add(new Mechanic("Ivan", "Yota", "CarPar"));
+        allMech.add(new Mechanic("Max", "Fax", "AuTu"));
+
         Mechanic Bory = new Mechanic("Bory", "Last", "TechPech");
         Mechanic Ivan = new Mechanic("Ivan", "Yota", "CarPar");
         Mechanic Max = new Mechanic("Max", "Fax", "AuTu");
@@ -90,7 +95,16 @@ public class Main {
         System.out.println(ServiceStation.addAuto(
                 new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max),state));
         System.out.println(ServiceStation.compliteTo(state));
+        System.out.println("--------");
+        Map<Transport, Mechanic> mapCar = new HashMap<>();
+        mapCar.put(new Car("Ford", "Mustang", 3.5, new DriverB("max", true, 5), Body.SEDAN, "Car", Bory),allMech.get(0));
+        mapCar.put(new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Max),allMech.get(1));
+        mapCar.put(new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max),allMech.get(2));
+        for (Map.Entry<Transport, Mechanic> car: mapCar.entrySet()) {
+            System.out.println("Автомобиль " + car.getKey().getModel() + " Механник " + car.getValue().getFirstName());
+        }
     }
+
 
 
     public static void checkTran(Transport... transports) throws TransportTypeException {
