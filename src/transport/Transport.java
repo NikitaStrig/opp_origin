@@ -3,13 +3,13 @@ package transport;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Transport <T extends Driver> implements Competing {
+public abstract class Transport <T extends Driver, M extends Mechanic> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T draiver;
     private String type;
-    Mechanic mechanic;
+    private M mechanic;
     List<transport.Mechanic> mechanicList = new ArrayList<>();
 
 
@@ -45,7 +45,7 @@ public abstract class Transport <T extends Driver> implements Competing {
         return mechanicList;
     }
 
-    public Transport(String brand, String model, double engineVolume, T draiver, String type,Mechanic mechanic) {
+    public Transport(String brand, String model, double engineVolume, T draiver, String type,M mechanic) {
          this.brand = brand;
          this.model = model;
          this.engineVolume = engineVolume;

@@ -1,5 +1,5 @@
 package transport;
-public class Car extends Transport<DriverB> {
+public class Car extends Transport<DriverB,Mechanic> {
    Body body;
 
 

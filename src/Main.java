@@ -63,23 +63,32 @@ public class Main {
         checkTran(test1, test2, test3);
 
 
-        //  printInfoDriverB(massCar);
-        //  printInfoDriverC(massTrucks);
-        // printInfoDriverD(massBus);
         System.out.println("--------");
 
-        List<String> allCars = new ArrayList<>();
-        allCars.add(test1.getModel());
-        allCars.add(test2.getModel());
-        allCars.add(test3.getModel());
+        List<Transport> allCars = new ArrayList<>();
+        allCars.add(new Car("Ford", "Mustang", 3.5, new DriverB("max", true, 5), Body.SEDAN, "Car", Bory));
+        allCars.add(new Trucks("Skoda", "Cody", 3.0, driverC_3, LoadCapacity.N3, "Trucks", Ivan));
+        allCars.add(new Bus("Reno", "dust", 6.5, driverD_4, CapacityBus.especiallySmall, "", Max));
         // -------------------------------------
-        printMechDriverAuto(allCars,);
-        //printMechDriverAutoBus(allCars, massBus);
-        //printMechDriverAutoTrack(allCars, massTrucks);
-        //----------------------------
-     //   ArrayDeque<String> states = new ArrayDeque<>();
-      //  states.add(massCar[0].getModel());
+       for (int i = 0; i < allCars.size(); i++) {
+           System.out.println("Автомобиль: " +allCars.get(i).getModel()+ " Водитель: " +
+                   allCars.get(i).getDraiver().getName() + " Механник: " + allCars.get(i).getMechanic().getFirstName()
+                   + " " + allCars.get(i).getMechanic().getFirstName());
 
+        }
+
+        System.out.println("--------");
+       Deque<String> state = new LinkedList<>();
+       state.add("Audi");
+       state.add("Mers");
+        System.out.println(ServiceStation.compliteTo(state));
+        System.out.println(ServiceStation.addAuto("BMW",state));
+        System.out.println(ServiceStation.compliteTo(state));
+        System.out.println(ServiceStation.addAuto("BMW",state));
+        System.out.println(ServiceStation.addAuto("Maz",state));
+        System.out.println(ServiceStation.compliteTo(state));
+        System.out.println(ServiceStation.addAuto("Fiat",state));
+        System.out.println(ServiceStation.compliteTo(state));
     }
 
 

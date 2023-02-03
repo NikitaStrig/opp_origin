@@ -1,6 +1,6 @@
 package transport;
 
-public class Trucks extends Transport<DriverC> {
+public class Trucks extends Transport<DriverC,Mechanic> {
     LoadCapacity loadCapacity;
 
 
