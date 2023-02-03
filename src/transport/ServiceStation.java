@@ -10,20 +10,20 @@ public class ServiceStation {
         this.numberStation = numberStation;
     }
 
-    public static String addAuto(String s, Deque q){
+    public static String addAuto(Transport transport, Deque q){
        try {
-           check(s);
-           q.add(s);
-           return "На ТО прибыл автомобиль: " + s;
+           check(transport);
+           q.add(transport.getModel());
+           return "На ТО прибыл автомобиль: " + transport.getModel();
        }catch (TransportTypeException e){
            System.out.println("Error " + e.toString());
-       }return "Автобус " + s + " в ТО не нуждается";
+       }return "Автобус " + transport.getModel() + " в ТО не нуждается";
     };
     public static String compliteTo(Deque q){
        return "ТО прошел автомобиль: " + q.remove();
     }
-    public static void check(String s) throws TransportTypeException{
-        if (s == "Maz"){
+    public static void check(Transport transport) throws TransportTypeException{
+        if (transport.getType() == "Bus"){
             throw new TransportTypeException();
         }
     }

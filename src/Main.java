@@ -82,12 +82,15 @@ public class Main {
        state.add("Audi");
        state.add("Mers");
         System.out.println(ServiceStation.compliteTo(state));
-        System.out.println(ServiceStation.addAuto("BMW",state));
+        System.out.println(ServiceStation.addAuto(
+                new Car("Ford", "Mustang", 3.5,
+                        new DriverB("max", true, 5), Body.SEDAN, "Car", Bory),state));
         System.out.println(ServiceStation.compliteTo(state));
-        System.out.println(ServiceStation.addAuto("BMW",state));
-        System.out.println(ServiceStation.addAuto("Maz",state));
+        System.out.println(ServiceStation.addAuto(
+                new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Bory),state));
         System.out.println(ServiceStation.compliteTo(state));
-        System.out.println(ServiceStation.addAuto("Fiat",state));
+        System.out.println(ServiceStation.addAuto(
+                new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max),state));
         System.out.println(ServiceStation.compliteTo(state));
     }
 
