@@ -92,7 +92,6 @@ public class Main {
         System.out.println(ServiceStation.compliteTo(state));
     }
 
-
     public static void checkTran(Transport... transports) throws TransportTypeException {
         for (Transport transport : transports) {
             try {
