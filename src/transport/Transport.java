@@ -76,7 +76,6 @@ public abstract class Transport <T extends Driver, M extends Mechanic> implement
                 ", draiver=" + draiver +
                 ", type='" + type + '\'' +
                 ", mechanic=" + mechanic +
-                ", mechanicList=" + mechanicList +
                 '}';
     }
 
