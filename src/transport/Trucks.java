@@ -1,11 +1,12 @@
 package transport;
 
-public class Trucks extends Transport<DriverC> {
+public class Trucks extends Transport<DriverC,Mechanic> {
     LoadCapacity loadCapacity;
 
 
-    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity, String type) {
-        super(brand, model, engineVolume, draiver,type);
+    public Trucks(String brand, String model, double engineVolume, DriverC draiver, LoadCapacity loadCapacity, String type,
+    Mechanic mechanic) {
+        super(brand, model, engineVolume, draiver,type,mechanic);
         this.loadCapacity = loadCapacity;
 
     }
@@ -25,7 +26,6 @@ public class Trucks extends Transport<DriverC> {
         System.out.println("Тегач" + getModel() + " закончил движение ");
 
     }
-
     @Override
     public boolean diagnostikPass() {
    return true;

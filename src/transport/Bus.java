@@ -1,15 +1,15 @@
 package transport;
 
-public class Bus extends Transport<DriverD> {
+public class Bus extends Transport<DriverD,Mechanic> {
     CapacityBus capacityBus;
 
 
-    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type) {
-        super(brand, model, engineVolume, draiver,type);
+    public Bus(String brand, String model, double engineVolume, DriverD draiver, CapacityBus capacityBus, String type,
+               Mechanic mechanic) {
+        super(brand, model, engineVolume, draiver,type,mechanic);
         this.capacityBus = capacityBus;
 
     }
-
 
     public CapacityBus getCapacityBus() {
         return capacityBus;

@@ -1,9 +1,11 @@
 package transport;
-public class Car extends Transport<DriverB> {
+public class Car extends Transport<DriverB,Mechanic> {
    Body body;
 
-   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type) {
-      super(brand, model, engineVolume, draiver,type);
+
+
+   public Car(String brand, String model, double engineVolume, DriverB draiver, Body body, String type, Mechanic mechanic) {
+      super(brand, model, engineVolume, draiver,type,mechanic);
       this.body = body;
 
    }
