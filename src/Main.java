@@ -103,19 +103,6 @@ public class Main {
         for (Map.Entry<Transport, Mechanic> car : mapCar.entrySet()) {
             System.out.println("Автомобиль " + car.getKey().getModel() + " Механник " + car.getValue().getFirstName());
         }
-        Set<Driver> setDriver = new HashSet<>();
-        setDriver.add(new DriverB("Max", true, 5));
-        setDriver.add(new DriverC("Саша", true, 5));
-        setDriver.add(new DriverD("Герман", true, 5));
-        setDriver.add(new DriverB("Max", true, 5));
-        Iterator<Driver> iterDriver = setDriver.iterator();
-        while (iterDriver.hasNext()) {
-            System.out.println(iterDriver.next());
-        }
-
-
-
-
 
     }
 
