@@ -9,6 +9,11 @@ public class Main {
         transport.Car[] massCar = new transport.Car[4];
         transport.Bus[] massBus = new transport.Bus[4];
         transport.Trucks[] massTrucks = new transport.Trucks[4];
+        List<Mechanic> allMech = new ArrayList<>();
+        allMech.add(new Mechanic("Bory", "Last", "TechPech"));
+        allMech.add(new Mechanic("Ivan", "Yota", "CarPar"));
+        allMech.add(new Mechanic("Max", "Fax", "AuTu"));
+
         Mechanic Bory = new Mechanic("Bory", "Last", "TechPech");
         Mechanic Ivan = new Mechanic("Ivan", "Yota", "CarPar");
         Mechanic Max = new Mechanic("Max", "Fax", "AuTu");
@@ -69,29 +74,45 @@ public class Main {
         allCars.add(new Trucks("Skoda", "Cody", 3.0, driverC_3, LoadCapacity.N3, "Trucks", Ivan));
         allCars.add(new Bus("Reno", "dust", 6.5, driverD_4, CapacityBus.especiallySmall, "", Max));
         // -------------------------------------
-       for (int i = 0; i < allCars.size(); i++) {
-           System.out.println("Автомобиль: " +allCars.get(i).getModel()+ " Водитель: " +
-                   allCars.get(i).getDraiver().getName() + " Механник: " + allCars.get(i).getMechanic().getFirstName()
-                   + " " + allCars.get(i).getMechanic().getFirstName());
+        for (int i = 0; i < allCars.size(); i++) {
+            System.out.println("Автомобиль: " + allCars.get(i).getModel() + " Водитель: " +
+                    allCars.get(i).getDraiver().getName() + " Механник: " + allCars.get(i).getMechanic().getFirstName()
+                    + " " + allCars.get(i).getMechanic().getFirstName());
 
         }
         System.out.println("--------");
-       Deque<String> state = new LinkedList<>();
-       state.add("Audi");
-       state.add("Mers");
+        Deque<String> state = new LinkedList<>();
+        state.add("Audi");
+        state.add("Mers");
         System.out.println(ServiceStation.compliteTo(state));
         System.out.println(ServiceStation.addAuto(
                 new Car("Ford", "Mustang", 3.5,
-                        new DriverB("max", true, 5), Body.SEDAN, "Car", Bory),state));
+                        new DriverB("max", true, 5), Body.SEDAN, "Car", Bory), state));
         System.out.println(ServiceStation.compliteTo(state));
         System.out.println(ServiceStation.addAuto(
-                new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Bory),state));
+                new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Bory), state));
         System.out.println(ServiceStation.compliteTo(state));
         System.out.println(ServiceStation.addAuto(
-                new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max),state));
+                new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max), state));
         System.out.println(ServiceStation.compliteTo(state));
+        System.out.println("--------");
+        Map<Transport, Mechanic> mapCar = new HashMap<>();
+        mapCar.put(new Car("Ford", "Mustang", 3.5, new DriverB("max", true, 5), Body.SEDAN, "Car", Bory), allMech.get(0));
+        mapCar.put(new Bus("Mer", "Atr", 1.5, driverD_2, CapacityBus.small, "Bus", Max), allMech.get(1));
+        mapCar.put(new Trucks("BMW", "WW", 2.5, driverC_2, LoadCapacity.N2, "Trucks", Max), allMech.get(2));
+        for (Map.Entry<Transport, Mechanic> car : mapCar.entrySet()) {
+            System.out.println("Автомобиль " + car.getKey().getModel() + " Механник " + car.getValue().getFirstName());
+        }
+        Set<Driver> setDriver = new HashSet<>();
+        setDriver.add(new DriverB("Max", true, 5));
+        setDriver.add(new DriverC("Саша", true, 5));
+        setDriver.add(new DriverD("Герман", true, 5));
+        setDriver.add(new DriverB("Max", true, 5));
+        Iterator<Driver> iterDriver = setDriver.iterator();
+        while (iterDriver.hasNext()) {
+            System.out.println(iterDriver.next());
+        }
     }
-
     public static void checkTran(Transport... transports) throws TransportTypeException {
         for (Transport transport : transports) {
             try {
